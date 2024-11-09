@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block body_block %}
+<section>
+    <div class="cotainer">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="wrapper register_form">
+                {% if registered %}
+                <h1>Registered Successfully!
+                    {% else %}
+                    <h1 class="register">Register Here</h1>
+                    <!-- <h2 class="fill">Fill Out The Form:</h2> -->
+                    <form method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{user_form.as_p}}
+                        {{profile_form.as_p}}
+                        <input type="submit" name="" value="Register">
+                    </form>
+                    {% endif %}
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

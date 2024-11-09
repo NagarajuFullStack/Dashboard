@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block body_block %}
+
+<div class="wrapper login">
+    <h class="hear">Login hear</h>
+    <form action="{% url 'basic_app:userlogin' %}" method="post">
+        {% csrf_token %}
+        <div class="usern">
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter Username">
+    </div>
+    <div class="passw">
+        <label for="password">Password:</label>
+        <input type="password" name="password" placeholder="Enter Password">
+    </div>
+        <button type="submit" class="log">Login</button>
+    </form>
+</div>
+{% endblock %}

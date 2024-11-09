@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block body_block %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+
+<body>
+    <div>
+        <img src="{% static 'assests/images/benner_5.jpg' %}" alt="Background Image" class="banner">
+
+    </div>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="person">{{ user.username }}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+    <section>
+        <div class="container id">
+            <div class="row">
+                <div class="col-md-6">
+                    {% if userinfo.profile_pic %}
+                    <!-- <img src="{{userinfo.profile_pic.url}}" class="pics" alt="Profile Picture"> -->
+                    <img src="{{ userinfo.profile_pic.url }}" class="pics" alt="Profile Picture"
+                        style="width: 150px; height: 160px; border-radius: 50%; box-shadow: 2px 2px 5px rgba(0,0,0,0.3);">
+
+                    {% endif %}
+                </div>
+                <div class="col-md-6">
+                    <p class="details"> {{ userinfo.id }}</p>
+                    <p class="details"> {{ userinfo.position }}</p>
+                    <p class="details"> {{ userinfo.company }}</p>
+                    <p class="details"> {{ userinfo.phone }}</p>
+                    <p class="details"> {{ userinfo.Email_address }}</p>
+                </div>
+                
+
+            </div>
+        </div>
+    </section>
+    
+
+    
+
+    <!-- You can display other user details here -->
+</body>
+
+</html>
+
+
+
+
+
+{% endblock %}

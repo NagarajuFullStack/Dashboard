@@ -1,0 +1,14 @@
+.position{
+    font-size: large;
+}
+/* img.pics {
+    width: 25%;
+} */
+.card.login {
+    width: 25%;
+}
+a {
+  color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+  text-decoration: underline;
+  margin-left: 24px;
+}
